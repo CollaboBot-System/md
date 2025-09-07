@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mira <3</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #171717, #000000); /* Gradient über die ganze Seite */
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1), transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .page.hidden {
+            opacity: 0;
+            transform: translateY(60px);
+            pointer-events: none;
+        }
+
+        #button {
+            padding: 15px 40px;
+            font-size: 18px;
+            background: linear-gradient(90deg, #ff4d94, #ff8c94, #ff4d94);
+            background-size: 200% auto;
+            border: none;
+            border-radius: 50px;
+            color: #ffffff;
+            cursor: pointer;
+            animation: gradientShift 6s ease infinite, pulse 2s ease-in-out infinite;
+            transition: opacity 0.5s ease, transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 6px 20px rgba(255, 77, 148, 0.5);
+            touch-action: manipulation;
+            position: relative;
+        }
+
+        #button:hover {
+            transform: scale(1.15);
+            box-shadow: 0 10px 30px rgba(255, 77, 148, 0.7);
+        }
+
+        #button:active {
+            transform: scale(0.95);
+            box-shadow: 0 3px 15px rgba(255, 77, 148, 0.4);
+        }
+
+        #button.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 6px 20px rgba(255, 77, 148, 0.5); }
+            50% { transform: scale(1.1); box-shadow: 0 8px 25px rgba(255, 77, 148, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 6px 20px rgba(255, 77, 148, 0.5); }
+        }
+
+        .text {
+            max-width: 90%;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.8;
+            animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgb(38, 38, 38);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            #button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+            .text {
+                font-size: 14px;
+                line-height: 1.7;
+                padding: 20px;
+            }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="page1" class="page">
+        <button id="button">Klick Hier</button>
+    </div>
+    <div id="page2" class="page hidden">
+        <div class="text">
+            <p>Hallo Mira,</p>
+            <p>Ich muss dir einfach sagen, wie verrückt ich nach dir bin. Du bist wie so’n Sonnenstrahl, der immer meinen Tag heller macht. Egal, ob du lachst, mich mit deinen süßen Augen anschaust oder einfach nur da bist – ich krieg jedes Mal so’n Kribbeln im Bauch. Ich liebe, wie du immer so gut gelaunt bist, wie du mich zum Lachen bringst, auch wenn ich mal total mies drauf bin. Dein Lächeln, wie du redest, wie du einfach *du* bist – das haut mich jedes Mal um.</p>
+            <p>Mit dir ist echt alles besser. Ob wir zusammen Serien gucken, reden, chillen oder einfach nur zusammen rumhängen – ich will nie, dass das aufhört. Du bist so besonders für mich, und ich hab so viele Gefühle für dich, die ich gar nicht alle in Worte packen kann. Ich liebe, wie du immer so ehrlich bist, wie du mich verstehst, ohne dass ich viel sagen muss. Deine Art, wie du mich immer aufbaust, wie du so süß bist, wenn du mich neckst – ich könnte ewig so weitermachen.</p>
+            <p>Du machst mich so glücklich, und ich bin einfach so dankbar, dass du in meinem Leben bist. Ich will jeden Moment mit dir genießen, ob groß oder klein. Du bist mein Ein und Alles, und ich hab dich so lieb, dass es fast wehtut. 😊 Ich freu mich auf alles, was noch mit dir kommt, weil mit dir alles einfach magisch ist.</p>
+            <p>Für immer dein, Finn</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const button = document.getElementById('button');
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+
+    button.addEventListener('click', function() {
+        button.classList.add('hidden');// Button verschwindet sofort
+        button.disabled = true;
+
+        setTimeout(() => {
+            page1.classList.add('hidden');
+            page2.classList.remove('hidden');
+        }, 3000); // 5 Sekunden Wartezeit
+    });
+</script>
+</body>
+</html>
