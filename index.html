@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mira <3</title>
+    <title>Für dich, meine Liebste</title>
     <style>
         body {
             margin: 0;
@@ -128,7 +128,7 @@
 <body>
 <div class="container">
     <div id="page1" class="page">
-        <button id="button">Klick Hier</button>
+        <button id="button">klick Hier</button>
     </div>
     <div id="page2" class="page hidden">
         <div class="text">
@@ -147,13 +147,13 @@
     const page2 = document.getElementById('page2');
 
     button.addEventListener('click', function() {
-        button.classList.add('hidden');// Button verschwindet sofort
+        button.classList.add('hidden'); // Button verschwindet sofort
         button.disabled = true;
 
         setTimeout(() => {
             page1.classList.add('hidden');
             page2.classList.remove('hidden');
-        }, 3000); // 5 Sekunden Wartezeit
+        }, 5000); // 5 Sekunden Wartezeit
     });
 </script>
 </body>
